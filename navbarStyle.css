@@ -1,0 +1,32 @@
+body {
+    background-image: url(./assets/jpg/backgroundimg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+#navbar-logo {
+    height: 75px;
+}
+
+#navbarContainer #navbarNav {
+    font-size: 20px;
+}
+
+#navbarContainer .nav-item {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    width: 120px;
+}
+
+#navbarContainer .nav-link {
+    color: white;
+}
+
+#navbarContainer {
+    margin-bottom: 230px;
+    margin-top: 20px;
+}
