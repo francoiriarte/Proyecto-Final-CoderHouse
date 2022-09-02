@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="sweetalert2.min.css" />
+    <link rel="stylesheet" href="indexStyle.css" />
+    <link rel="stylesheet" href="navbarStyle.css" />
+    <link rel="stylesheet" href="footerStyle.css" />
+    <title>El rincón del mate</title>
+  </head>
+  <body>
+    <header>
+      <!--NAVBAR-->
+      <nav class="navbar navbar-expand-sm" id="navbarContainer">
+        <div class="container">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            class="collapse navbar-collapse d-flex-sm justify-content-center"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./index.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#clientContainer">Clientes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contactContainer">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div>
+        <!--BANNER-->
+        <div class="container-fluid-sm" id="bannerContainer">
+          <img id="bannerLogo" src="./assets/png/logo.png" alt="" />
+        </div>
+
+        <!--CARRITO-->
+        <button
+          class="btn btn-primary"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#staticBackdrop"
+          aria-controls="staticBackdrop"
+          id="carrito-desplegable"
+        >
+          <img src="./assets/png/cart.webp" alt="" />
+        </button>
+
+        <div
+          class="offcanvas offcanvas-start"
+          data-bs-backdrop="static"
+          tabindex="-1"
+          id="staticBackdrop"
+          aria-labelledby="staticBackdropLabel"
+          style="width: 650px"
+        >
+          <div class="offcanvas-header d-flex">
+            <h4
+              class="offcanvas-title"
+              id="staticBackdropLabel"
+              style="margin-left: 10px"
+            >
+              <b>Carrito de compras</b>
+            </h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <div id="carrito-container">
+              <table class="table" id="lista-carrito">
+                <tbody>
+                  <tr></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="final-carrito" style="margin-bottom: 50px">
+            <div>
+              <div
+                id="importe-container"
+                class="d-flex justify-content-center"
+                style="margin-bottom: 20px"
+              ></div>
+              <button
+                type="button"
+                class="btn btn-outline-danger"
+                id="vaciar-carrito"
+              >
+                Vaciar carrito
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-success"
+                id="confirmar-carrito"
+              >
+                Confirmar compra
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!--PRODUCTOS-->
+        <div class="container-fluid" id="products">
+          <div
+            class="container-fluid d-flex justify-content-center containerTitle"
+          >
+            <h2>Nuestros productos</h2>
+          </div>
+          <div class="container d-flex justify-content-center">
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              style="
+                width: 450px;
+                background-color: rgba(255, 255, 255, 0.8);
+                margin-bottom: 20px;
+                margin-top: 20px;
+              "
+              id="categoria-selector"
+            >
+              <option value="todos" selected>--Seleccione el tipo de producto que desea comprar--</option>
+              <option value="mates">Mates</option>
+              <option value="termos">Termos</option>
+              <option value="bombillas">Bombillas</option>
+              <option value="yerbas">Yerbas</option>
+            </select>
+          </div>
+          <div class="row" id="product-container"></div>
+        </div>
+
+        <!--CLIENTES-->
+        <div class="container-fluid" id="clientContainer">
+          <div
+            class="container-fluid d-flex justify-content-center containerTitle"
+          >
+            <h2>Nuestros clientes</h2>
+          </div>
+          <div class="row d-flex justify-content-center" id="clientRow">
+            <div
+              class="col-10 col-sm-10 col-md-10 col-lg-8 col-xl-8 col-xxl-7 bg-white phone"
+              id="clientItem"
+            >
+              <img src="./assets/png/user.png" class="card-img" alt="..." />
+              <h5 class="card-title">Nombre de usuario</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab
+                debitis recusandae, eaque hic cupiditate.
+              </p>
+            </div>
+            <div class="col-0 col-md-1"></div>
+          </div>
+          <div class="row d-flex justify-content-center" id="clientRow">
+            <div class="col-0 col-md-1"></div>
+            <div
+              class="col-10 col-sm-10 col-md-10 col-lg-8 col-xl-8 col-xxl-7 bg-white phone"
+              id="clientItem"
+            >
+              <img src="./assets/png/user.png" class="card-img" alt="..." />
+              <h5 class="card-title">Nombre de usuario</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab
+                debitis recusandae, eaque hic cupiditate.
+              </p>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center" id="clientRow">
+            <div
+              class="col-10 col-sm-10 col-md-10 col-lg-8 col-xl-8 col-xxl-7 bg-white phone"
+              id="clientItem"
+            >
+              <img src="./assets/png/user.png" class="card-img" alt="..." />
+              <h5 class="card-title">Nombre de usuario</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab
+                debitis recusandae, eaque hic cupiditate.
+              </p>
+            </div>
+            <div class="col-0 col-md-1"></div>
+          </div>
+        </div>
+
+        <!--CONTACTO-->
+        <div class="container-fluid" id="contactContainer">
+          <div
+            class="container-fluid d-flex justify-content-center containerTitle"
+          >
+            <h2>Contacto</h2>
+          </div>
+          <div class="container-fluid">
+            <div class="row" id="contactRow">
+              <div class="col-lg-7 col-xl-6 col-xxl-6" id="contactLeftColumn">
+                <img src="./assets/jpg/maps.webp" alt="" />
+              </div>
+              <div class="col-lg-4 col-xl-5 col-xxl-5" id="contactRightColumn">
+                <div class="col-12" id="rightColumnTitle">
+                  <h3>DIRECCIÓN</h3>
+                </div>
+                <div class="col-12" id="rightColumnContent">
+                  <p>
+                    Av. Calle Falsa 1150<br />Rafaela, Santa Fe<br />Argentina
+                  </p>
+                </div>
+                <div class="col-12" id="rightColumnTitle">
+                  <h3>TELÉFONO</h3>
+                </div>
+                <div class="col-12" id="rightColumnContent">
+                  <p>+54 3492 555555</p>
+                </div>
+                <div class="col-12" id="rightColumnTitle">
+                  <h3>REDES SOCIALES</h3>
+                </div>
+                <div class="col-12" id="rightColumnContent">
+                  <div class="imgContainer">
+                    <a href="#"
+                      ><img src="./assets/png/instagram.png" alt=""
+                    /></a>
+                    <a href="#"
+                      ><img src="./assets/png/twitter.png" alt=""
+                    /></a>
+                    <a href="#"
+                      ><img src="./assets/png/facebook.png" alt=""
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <!--FOOTER-->
+      <div class="container-fluid" id="footerContainer">
+        <h5>@Copyright ElRincónDelMate</h5>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.24/dist/sweetalert2.all.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="./app.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
